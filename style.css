@@ -160,7 +160,7 @@ button {
 .hero p {
   margin-top: 18px;
   color: var(--muted);
-  font-size: .9rem;
+  font-size: 1rem;
   line-height: 1.35;
 }
 
@@ -168,7 +168,7 @@ button {
   display: inline-flex;
   margin-top: 22px;
   color: var(--orange);
-  font-size: .86rem;
+  font-size: 1rem;
   font-weight: 800;
   transition: var(--transition);
 }
