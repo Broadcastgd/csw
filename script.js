@@ -1,7 +1,3 @@
-/* =========================================================
-  CSW Ingeniería Civil — Scripts
-========================================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("siteHeader");
   const menuToggle = document.getElementById("menuToggle");
@@ -12,11 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".section-anchor");
   const reveals = document.querySelectorAll(".reveal");
 
-  /* ------------------------------
-    HEADER ON SCROLL
-  ------------------------------ */
   const handleHeaderScroll = () => {
-    if (window.scrollY > 24) {
+    if (window.scrollY > 20) {
       header.classList.add("scrolled");
     } else {
       header.classList.remove("scrolled");
@@ -26,9 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
   handleHeaderScroll();
   window.addEventListener("scroll", handleHeaderScroll);
 
-  /* ------------------------------
-    MOBILE MENU
-  ------------------------------ */
   menuToggle.addEventListener("click", () => {
     mobileNav.classList.toggle("open");
     menuToggle.classList.toggle("open");
@@ -41,20 +31,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ------------------------------
-    ACTIVE NAVIGATION
-  ------------------------------ */
   const setActiveLink = () => {
     let currentSection = "";
 
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 140;
+      const sectionTop = section.offsetTop - 120;
       const sectionHeight = section.offsetHeight;
 
-      if (
-        window.scrollY >= sectionTop &&
-        window.scrollY < sectionTop + sectionHeight
-      ) {
+      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
         currentSection = section.getAttribute("id");
       }
     });
@@ -71,9 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setActiveLink();
   window.addEventListener("scroll", setActiveLink);
 
-  /* ------------------------------
-    REVEAL ON SCROLL
-  ------------------------------ */
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -84,8 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     },
     {
-      threshold: 0.14,
-      rootMargin: "0px 0px -40px 0px",
+      threshold: 0.12,
+      rootMargin: "0px 0px -35px 0px",
     }
   );
 
