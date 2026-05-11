@@ -132,16 +132,17 @@ button {
 
 /* HERO */
 .hero {
-  min-height: 54vh;
+  min-height: 100vh;
   padding: 130px 0 54px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .hero-copy {
   max-width: 380px;
-  margin-left: 55%;
-  transform: translateX(-20%);
+  margin: 0 auto;
+  transform: none;
 }
 
 .hero h1 {
