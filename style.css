@@ -101,7 +101,7 @@ button {
 
 .nav-link {
   font-size: .82rem;
-  font-weight: 600;
+  font-weight: 400;
   transition: var(--transition);
 }
 
