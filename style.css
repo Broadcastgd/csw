@@ -444,7 +444,7 @@ button {
 .section-title h2 {
   font-size: clamp(1.2rem, 2vw, 1.7rem);
   line-height: .95;
-  font-weight: 700;
+  font-weight: 650;
   letter-spacing: -.02em;
 }
 
@@ -490,18 +490,18 @@ button {
 
 .team-card h3 {
   margin-bottom: 1px;
-  font-size: .95rem;
+  font-size: 1rem;
 }
 
 .team-card .role {
   margin-bottom: 20px;
   color: var(--orange);
-  font-size: .88rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
 .team-card p {
-  font-size: .78rem;
+  font-size: 1rem;
   line-height: 1.16;
 }
 
@@ -575,21 +575,21 @@ button {
 .tools-content h2 {
   font-size: clamp(1.8rem, 3vw, 2.65rem);
   line-height: .9;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -.035em;
 }
 
 .tools-content h2 span {
   display: block;
   color: var(--orange);
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .tools-content p {
   max-width: 440px;
   margin-top: 22px;
   color: var(--muted);
-  font-size: .84rem;
+  font-size: 1rem;
   line-height: 1.35;
 }
 
@@ -660,13 +660,13 @@ button {
 .footer-contact h3 {
   margin-bottom: 7px;
   color: var(--orange);
-  font-size: .84rem;
+  font-size: 1rem;
 }
 
 .footer-contact a {
   display: block;
   margin-bottom: 7px;
-  font-size: .84rem;
+  font-size: 1rem;
   font-weight: 700;
   transition: var(--transition);
 }
@@ -740,7 +740,7 @@ button {
 
   .mobile-link {
     font-size: 1.2rem;
-    font-weight: 800;
+    font-weight: 700;
   }
 
   .mobile-link.active {
