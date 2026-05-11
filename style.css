@@ -168,8 +168,8 @@ button {
   display: inline-flex;
   margin-top: 22px;
   color: var(--orange);
-  font-size: 1rem;
-  font-weight: 800;
+  font-size: 2rem;
+  font-weight: 500;
   transition: var(--transition);
 }
 
