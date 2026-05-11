@@ -101,7 +101,7 @@ button {
 
 .nav-link {
   font-size: .82rem;
-  font-weight: 400;
+  font-weight: 600;
   transition: var(--transition);
 }
 
@@ -147,13 +147,13 @@ button {
 .hero h1 {
   font-size: clamp(2rem, 3.5vw, 3.4rem);
   line-height: .82;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -.04em;
 }
 
 .hero h1 span {
   display: block;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .hero p {
