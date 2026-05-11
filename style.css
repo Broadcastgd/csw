@@ -313,19 +313,22 @@ button {
 .portfolio-row-static {
   padding-left: 0;
   padding-right: 0;
+  width: 100%;
+  align-items: stretch;
 }
 
 .static-card {
   position: relative;
-  flex: 0 0 270px;
-  height: 210px;
+  flex: 1;
+  min-width: 0;
+  height: 320px;
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--dark);
 }
 
 .wide-static {
-  flex-basis: 380px;
+  flex: 1.4;
 }
 
 .portfolio-cta {
