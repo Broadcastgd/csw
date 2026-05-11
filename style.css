@@ -132,7 +132,7 @@ button {
 
 /* HERO */
 .hero {
-  min-height: 100vh;
+  min-height: 75vh;
   padding: 130px 0 54px;
   display: flex;
   align-items: center;
