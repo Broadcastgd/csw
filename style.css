@@ -1015,24 +1015,25 @@ button {
   }
 
   .calculator-list {
-    gap: 9px;
-    margin-top: 20px;
-  }
-
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 24px;
+}
   .calculator-card {
-    min-width: calc(50% - 5px);
-    padding: 9px 10px;
-    gap: 8px;
-    border-radius: 10px;
-  }
-
+  width: 100%;
+  min-width: 100%;
+  padding: 18px 22px;
+  gap: 16px;
+  border-radius: 18px;
+}
   .calculator-card img {
-    width: 18px;
-    height: 18px;
-  }
+  width: 34px;
+  height: 34px;
+}
 
   .calculator-card span {
-    font-size: .65rem;
+    font-size: 1.2rem;
   }
 
   .footer {
