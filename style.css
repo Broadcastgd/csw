@@ -518,9 +518,9 @@ button {
 .tools-strip {
   display: flex;
   gap: 8px;
-  height: 205px;
-  width: min(1120px, calc(100% - 40px));
-  margin: 0 auto;
+  height: 300px;
+  width: 100%;
+  padding: 0 24px;
 }
 
 .tool-image {
@@ -568,8 +568,8 @@ button {
 .tools-content {
   position: relative;
   z-index: 3;
-  max-width: 520px;
-  margin-top: -62px;
+  max-width: 620px;
+  margin-top: -78px;
 }
 
 .tools-content h2 {
@@ -603,11 +603,15 @@ button {
 .calculator-card {
   display: flex;
   align-items: center;
-  gap: 10px;
-  min-width: 150px;
-  padding: 11px 15px;
-  border-radius: 12px;
-  background: linear-gradient(180deg, rgba(255,255,255,.15), rgba(255,255,255,.04));
+  gap: 14px;
+  min-width: 190px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.15),
+    rgba(255,255,255,.04)
+  );
   box-shadow: 0 16px 32px rgba(0,0,0,.28);
   transition: var(--transition);
 }
@@ -618,17 +622,17 @@ button {
 }
 
 .calculator-card img {
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
 }
 
 .calculator-card span {
-  font-size: .78rem;
+  font-size: 1rem;
   line-height: .95;
 }
 
 .calculator-card strong {
-  font-weight: 800;
+  font-weight: 700;
 }
 
 /* FOOTER */
