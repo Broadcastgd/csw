@@ -189,7 +189,7 @@ button {
 
 .portfolio-row {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .portfolio-row-moving {
@@ -220,8 +220,8 @@ button {
 
 .project-card {
   position: relative;
-  flex: 0 0 250px;
-  height: 255px;
+  flex: 0 0 320px;
+  height: 420px;
   overflow: hidden;
   border-radius: var(--radius-md);
   background: var(--dark);
@@ -268,7 +268,7 @@ button {
 }
 
 .project-info p {
-  font-size: .72rem;
+  font-size: 1rem;
   line-height: 1.13;
 }
 
@@ -341,8 +341,8 @@ button {
 .portfolio-cta p,
 .footer-cta p {
   margin-bottom: 8px;
-  font-size: .86rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
 .pill-cta {
@@ -354,8 +354,8 @@ button {
   border: 1.5px solid var(--white);
   border-radius: 999px;
   color: var(--orange);
-  font-size: .78rem;
-  font-weight: 800;
+  font-size: 1rem;
+  font-weight: 600;
   transition: var(--transition);
 }
 
