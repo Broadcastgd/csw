@@ -76,9 +76,18 @@ button {
   inset: 0 0 auto;
   z-index: 1000;
   height: var(--header-height);
-  background: rgba(30, 30, 30, .92);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255,255,255,.04);
+
+  background: rgba(30, 30, 30, 0);
+
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+
+  border-bottom: 1px solid rgba(255,255,255,0);
+
+  transition:
+    background .45s ease,
+    backdrop-filter .45s ease,
+    border-color .45s ease;
 }
 
 .site-header.scrolled {
