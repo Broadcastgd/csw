@@ -36,9 +36,13 @@ body {
   font-family: var(--font);
   color: var(--white);
   background:
-    radial-gradient(circle at 50% 0%, rgba(255,255,255,.07), transparent 28%),
-    linear-gradient(180deg, #000000 0%, #1E1E1E 100%);
-  overflow-x: hidden;
+  radial-gradient(circle at 50% 0%, rgba(255,255,255,.05), transparent 30%),
+  linear-gradient(
+    180deg,
+    #1A1A1A 0%,
+    #1E1E1E 45%,
+    #1E1E1E 100%
+  );
 }
 
 img {
@@ -72,13 +76,13 @@ button {
   inset: 0 0 auto;
   z-index: 1000;
   height: var(--header-height);
-  background: rgba(0,0,0,.92);
+  background: rgba(30, 30, 30, .92);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.04);
 }
 
 .site-header.scrolled {
-  background: rgba(0,0,0,.96);
+  background: rgba(30, 30, 30, .96);
 }
 
 .header-inner {
@@ -304,8 +308,8 @@ button {
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    rgba(0,0,0,0) 8%,
-    rgba(15,15,15,.78) 68%,
+    rgba(30,30,30,0) 8%,
+    rgba(30,30,30,.72) 68%,
     #1E1E1E 100%
   );
 }
