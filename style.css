@@ -72,13 +72,13 @@ button {
   inset: 0 0 auto;
   z-index: 1000;
   height: var(--header-height);
-  background: rgba(0,0,0,.74);
+  background: rgba(0,0,0,.92);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
 
 .site-header.scrolled {
-  background: rgba(0,0,0,.9);
+  background: rgba(0,0,0,.96);
 }
 
 .header-inner {
