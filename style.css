@@ -322,11 +322,11 @@ background: rgba(12, 12, 12, .72);
   z-index: 2;
   pointer-events: none;
   background: linear-gradient(
-    180deg,
-    rgba(30,30,30,0) 8%,
-    rgba(30,30,30,.72) 68%,
-    #1E1E1E 100%
-  );
+  180deg,
+  rgba(20,20,20,0) 10%,
+  rgba(20,20,20,.76) 65%,
+  #171717 100%
+);
 }
 
 .portfolio-row-static {
