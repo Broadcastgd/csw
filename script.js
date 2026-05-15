@@ -8,17 +8,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".section-anchor");
   const reveals = document.querySelectorAll(".reveal");
 
+  const portfolioScroller = document.querySelector(".portfolio-row-moving");
+  const projectCards = document.querySelectorAll(".project-card");
+
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+
+  // Header scroll
   const handleHeaderScroll = () => {
-    if (window.scrollY > 20) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
+    header.classList.toggle("scrolled", window.scrollY > 20);
   };
 
   handleHeaderScroll();
   window.addEventListener("scroll", handleHeaderScroll);
 
+  // Mobile menu
   menuToggle.addEventListener("click", () => {
     mobileNav.classList.toggle("open");
     menuToggle.classList.toggle("open");
@@ -31,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Active nav
   const setActiveLink = () => {
     let currentSection = "";
 
@@ -44,17 +50,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     [...navLinks, ...mobileLinks].forEach((link) => {
-      link.classList.remove("active");
-
-      if (link.getAttribute("href") === `#${currentSection}`) {
-        link.classList.add("active");
-      }
+      link.classList.toggle("active", link.getAttribute("href") === `#${currentSection}`);
     });
   };
 
   setActiveLink();
   window.addEventListener("scroll", setActiveLink);
 
+  // Reveal
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -71,65 +74,46 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   reveals.forEach((element) => revealObserver.observe(element));
-});
 
-const projectCards = document.querySelectorAll('.project-card');
+  // Portfolio drag desktop
+  if (portfolioScroller) {
+    portfolioScroller.addEventListener("mousedown", (e) => {
+      isDown = true;
+      portfolioScroller.classList.add("dragging");
 
-projectCards.forEach(card => {
-  card.addEventListener('click', () => {
+      startX = e.pageX - portfolioScroller.offsetLeft;
+      scrollLeft = portfolioScroller.scrollLeft;
+    });
 
-    if (window.innerWidth <= 640) {
+    portfolioScroller.addEventListener("mouseleave", () => {
+      isDown = false;
+      portfolioScroller.classList.remove("dragging");
+    });
 
-      projectCards.forEach(c => {
-        c.classList.remove('active');
-      });
+    portfolioScroller.addEventListener("mouseup", () => {
+      isDown = false;
+      portfolioScroller.classList.remove("dragging");
+    });
 
-      card.classList.add('active');
-    }
+    portfolioScroller.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+
+      e.preventDefault();
+
+      const x = e.pageX - portfolioScroller.offsetLeft;
+      const walk = (x - startX) * 1.4;
+
+      portfolioScroller.scrollLeft = scrollLeft - walk;
+    });
+  }
+
+  // Portfolio click mobile
+  projectCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      if (window.innerWidth <= 640) {
+        projectCards.forEach((item) => item.classList.remove("active"));
+        card.classList.add("active");
+      }
+    });
   });
 });
-const portfolioScroller = document.querySelector('.portfolio-row-moving');
-
-let isDown = false;
-let startX;
-let scrollLeft;
-
-portfolioScroller.addEventListener('mousedown', (e) => {
-  isDown = true;
-  portfolioScroller.classList.add('dragging');
-  startX = e.pageX - portfolioScroller.offsetLeft;
-  scrollLeft = portfolioScroller.scrollLeft;
-});
-
-portfolioScroller.addEventListener('mouseleave', () => {
-  isDown = false;
-  portfolioScroller.classList.remove('dragging');
-});
-
-portfolioScroller.addEventListener('mouseup', () => {
-  isDown = false;
-  portfolioScroller.classList.remove('dragging');
-});
-
-portfolioScroller.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - portfolioScroller.offsetLeft;
-  const walk = (x - startX) * 1.4;
-  portfolioScroller.scrollLeft = scrollLeft - walk;
-});
-portfolioScroller.addEventListener('scroll', () => {
-
-  const maxScroll =
-    portfolioScroller.scrollWidth - portfolioScroller.clientWidth;
-
-  if (portfolioScroller.scrollLeft >= maxScroll - 5) {
-    portfolioScroller.scrollLeft = 5;
-  }
-
-  if (portfolioScroller.scrollLeft <= 0) {
-    portfolioScroller.scrollLeft = maxScroll - 10;
-  }
-
-});
-
