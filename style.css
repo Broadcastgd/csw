@@ -213,7 +213,14 @@ background: rgba(12, 12, 12, .72);
 
 .portfolio-row-moving {
   width: 100%;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+}
+
+.portfolio-row-moving::-webkit-scrollbar {
+  display: none;
 }
 
 .portfolio-track {
@@ -221,8 +228,9 @@ background: rgba(12, 12, 12, .72);
   gap: 8px;
   width: max-content;
 
-  animation: portfolioMarquee 45s linear infinite;
-
+animation: portfolioMarquee 24s linear infinite;
+  pointer-events: auto;
+  
   cursor: grab;
   touch-action: pan-x;
 
