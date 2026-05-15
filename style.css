@@ -224,8 +224,18 @@ background: rgba(12, 12, 12, .72);
   display: flex;
   gap: 14px;
   width: max-content;
-  animation: portfolioMarquee 38s linear infinite;
+  animation: portfolioMarquee 55s linear infinite;
   will-change: transform;
+}
+
+@keyframes portfolioMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-25% - 3.5px));
+  }
 }
 
 .portfolio-spacer {
