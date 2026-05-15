@@ -224,7 +224,7 @@ background: rgba(12, 12, 12, .72);
   display: flex;
   gap: 14px;
   width: max-content;
-  animation: portfolioMarquee 55s linear infinite;
+  animation: portfolioMarquee 80s linear infinite;
   will-change: transform;
 }
 
