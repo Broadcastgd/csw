@@ -210,45 +210,38 @@ background: rgba(12, 12, 12, .72);
   display: flex;
   gap: 6px;
 }
-
 .portfolio-row-moving {
   width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   cursor: grab;
   -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
 }
 
 .portfolio-row-moving::-webkit-scrollbar {
   display: none;
 }
 
+.portfolio-row-moving.dragging {
+  cursor: grabbing;
+}
+
 .portfolio-track {
   display: flex;
   gap: 14px;
-  width: max-content; padding-right: 0; padding-left: 0;
-
-animation: portfolioMarquee 24s linear infinite;
-  pointer-events: auto;
-  
+  width: max-content;
   cursor: grab;
   touch-action: pan-x;
-
-  -webkit-overflow-scrolling: touch;
 }
 
-.portfolio-row-moving:hover .portfolio-track {
-  animation-play-state: paused;
+.portfolio-spacer {
+  width: 180px;
+  flex-shrink: 0;
 }
 
-@keyframes portfolioMarquee {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
+.project-card {
+  scroll-snap-align: center;
 }
 
 .project-card {
