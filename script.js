@@ -88,3 +88,34 @@ projectCards.forEach(card => {
     }
   });
 });
+const portfolioScroller = document.querySelector('.portfolio-row-moving');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+portfolioScroller.addEventListener('mousedown', (e) => {
+  isDown = true;
+  portfolioScroller.classList.add('dragging');
+  startX = e.pageX - portfolioScroller.offsetLeft;
+  scrollLeft = portfolioScroller.scrollLeft;
+});
+
+portfolioScroller.addEventListener('mouseleave', () => {
+  isDown = false;
+  portfolioScroller.classList.remove('dragging');
+});
+
+portfolioScroller.addEventListener('mouseup', () => {
+  isDown = false;
+  portfolioScroller.classList.remove('dragging');
+});
+
+portfolioScroller.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - portfolioScroller.offsetLeft;
+  const walk = (x - startX) * 1.4;
+  portfolioScroller.scrollLeft = scrollLeft - walk;
+});
+
