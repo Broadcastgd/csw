@@ -226,7 +226,7 @@ background: rgba(12, 12, 12, .72);
 .portfolio-track {
   display: flex;
   gap: 8px;
-  width: max-content;
+  width: max-content; padding-right: 0;
 
 animation: portfolioMarquee 24s linear infinite;
   pointer-events: auto;
