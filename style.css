@@ -204,44 +204,32 @@ background: rgba(12, 12, 12, .72);
 
 .portfolio-wrap {
   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .portfolio-row {
   display: flex;
   gap: 6px;
 }
+
+/* CARRUSEL EN MOVIMIENTO */
 .portfolio-row-moving {
-  width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  cursor: grab;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-}
-
-.portfolio-row-moving::-webkit-scrollbar {
-  display: none;
-}
-
-.portfolio-row-moving.dragging {
-  cursor: grabbing;
+  width: 100vw;
+  overflow: hidden;
+  margin-left: calc(50% - 50vw);
 }
 
 .portfolio-track {
   display: flex;
   gap: 14px;
   width: max-content;
-  cursor: grab;
-  touch-action: pan-x;
+  animation: portfolioMarquee 38s linear infinite;
+  will-change: transform;
 }
 
 .portfolio-spacer {
-  width: 180px;
-  flex-shrink: 0;
-}
-
-.project-card {
-  scroll-snap-align: center;
+  display: none;
 }
 
 .project-card {
@@ -316,6 +304,21 @@ background: rgba(12, 12, 12, .72);
   transform: translateY(0);
 }
 
+.portfolio-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes portfolioMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 7px));
+  }
+}
+
+/* PARTE INFERIOR */
 .portfolio-bottom {
   position: relative;
   margin-top: 8px;
@@ -329,11 +332,11 @@ background: rgba(12, 12, 12, .72);
   z-index: 2;
   pointer-events: none;
   background: linear-gradient(
-  180deg,
-  rgba(20,20,20,0) 10%,
-  rgba(20,20,20,.76) 65%,
-  #101010 100%
-);
+    180deg,
+    rgba(20,20,20,0) 10%,
+    rgba(20,20,20,.76) 65%,
+    #101010 100%
+  );
 }
 
 .portfolio-row-static {
