@@ -72,3 +72,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   reveals.forEach((element) => revealObserver.observe(element));
 });
+
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach(card => {
+  card.addEventListener('click', () => {
+
+    if (window.innerWidth <= 640) {
+
+      projectCards.forEach(c => {
+        c.classList.remove('active');
+      });
+
+      card.classList.add('active');
+    }
+  });
+});
