@@ -497,7 +497,7 @@ background: rgba(12, 12, 12, .72);
   grid-template-columns: 150px 1fr;
   gap: 34px;
   align-items: center;
-  min-height: 150px;
+  min-height: 168px;
   padding: 14px;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -507,7 +507,7 @@ background: rgba(12, 12, 12, .72);
 
 .team-card img {
   width: 100%;
-  height: 120px;
+  height: 138px;
   object-fit: cover;
   border-radius: 13px;
   filter: grayscale(100%);
