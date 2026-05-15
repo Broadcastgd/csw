@@ -118,4 +118,18 @@ portfolioScroller.addEventListener('mousemove', (e) => {
   const walk = (x - startX) * 1.4;
   portfolioScroller.scrollLeft = scrollLeft - walk;
 });
+portfolioScroller.addEventListener('scroll', () => {
+
+  const maxScroll =
+    portfolioScroller.scrollWidth - portfolioScroller.clientWidth;
+
+  if (portfolioScroller.scrollLeft >= maxScroll - 5) {
+    portfolioScroller.scrollLeft = 5;
+  }
+
+  if (portfolioScroller.scrollLeft <= 0) {
+    portfolioScroller.scrollLeft = maxScroll - 10;
+  }
+
+});
 
